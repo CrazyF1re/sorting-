@@ -60,7 +60,7 @@ void Graph::Clear()
 
 void Graph::Form_graph()
 {
-	int a, b;//âåðøèíû
+	int a, b;//Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹
 	cin >> a >> b;
 	Lider* pa = Find_key(a);
 	Lider* pb = Find_key(b);
@@ -95,14 +95,14 @@ void Graph::Sort_graph(Graph& LD)
 			LDnew.Add_to_head(temp->key);
 		}
 		temp = temp->next;
-	}//äîáàâëÿåì â LDnew âåðøèíû ñ count =0;
+	}//Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð² LDnew Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ Ñ count =0;
 
 	LDnew.head = LDnew.head->next;
-	while (!LDnew.Is_empty()) //îñíîâíîé öèêë
+	while (!LDnew.Is_empty()) //Ð¾ÑÐ½Ð¾Ð²Ð½Ð¾Ð¹ Ñ†Ð¸ÐºÐ»
 	{
 		Lider* temp = LDnew.head;
-		LDnew.head = LDnew.head->next;//èñêëþ÷åíèå ãîëîâíîé âåðøèíû
-			//óìåíüøàåì íà åäèíèöó ïîëå count ó âñåõ ýëåìåíòîâ ñïèñêà LD
+		LDnew.head = LDnew.head->next;//Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ð³Ð¾Ð»Ð¾Ð²Ð½Ð¾Ð¹ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹
+			//ÑƒÐ¼ÐµÐ½ÑŒÑˆÐ°ÐµÐ¼ Ð½Ð° ÐµÐ´Ð¸Ð½Ð¸Ñ†Ñƒ Ð¿Ð¾Ð»Ðµ count Ñƒ Ð²ÑÐµÑ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² ÑÐ¿Ð¸ÑÐºÐ° LD
 		
 		if (LD.Find_key(temp->key)->tr!=0)
 		{
@@ -111,11 +111,11 @@ void Graph::Sort_graph(Graph& LD)
 			{
 				LD.Find_key(tmp->ptr->key)->count--;
 				if (LD.Find_key(tmp->ptr->key)->count == 0) {
-					LDnew.Add_to_head(tmp->ptr->key);//äîáàâëåíèå âåðøèíû â LDnew
+					LDnew.Add_to_head(tmp->ptr->key);//Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ Ð² LDnew
 				}
 				Trailer* T = tmp;
 				tmp = tmp->next;
-				delete T;//óäàëÿåì óçåë â Trailer
+				delete T;//ÑƒÐ´Ð°Ð»ÑÐµÐ¼ ÑƒÐ·ÐµÐ» Ð² Trailer
 			}
 			LD.Find_key(tmp->ptr->key)->count--;
 			if (LD.Find_key(tmp->ptr->key)->count == 0) {
@@ -123,7 +123,7 @@ void Graph::Sort_graph(Graph& LD)
 			}
 			delete tmp;
 		}
-		cout << temp->key << "   !   ";//âûïèñûâàåì â ðåøåíèå p->key
+		cout << temp->key << "   !   ";//Ð²Ñ‹Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ð² Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ p->key
 		this->Add_to_tail(temp);
 		delete temp;
 	}
