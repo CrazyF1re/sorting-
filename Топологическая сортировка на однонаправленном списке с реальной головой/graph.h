@@ -30,7 +30,7 @@ struct Graph
 	void Form_graph();
 	void Sort_graph(Graph & X);
 	bool Is_empty();
-	Lider* Find_count(int k);// поиск узла с count = 0
+	Lider* Find_count(int k);// РїРѕРёСЃРє СѓР·Р»Р° СЃ count = 0
 	void Exclude(Lider* p);
 	void Add_to_tail(Lider*p);
 };
