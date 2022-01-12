@@ -5,16 +5,16 @@
 class Bool_Matrix
 {
 	BoolVector* BV;
-	int m, n;//m - количество строк матрицы, n - количество столбцов матрицы
+	int m, n;//m - РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РјР°С‚СЂРёС†С‹, n - РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РјР°С‚СЂРёС†С‹
 	bool is_ok(int i, int);
-	int Max(char** s, int m);//вспомогательная функция необходима в конструкторе
+	int Max(char** s, int m);//РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РЅРµРѕР±С…РѕРґРёРјР° РІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ
 public:
 	int Get_m();
 	int Get_n();
 	Bool_Matrix();
 	Bool_Matrix(int m,int n);
 	Bool_Matrix(char** s,int m);
-	Bool_Matrix(const Bool_Matrix &x);//конструктор копирования
+	Bool_Matrix(const Bool_Matrix &x);//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	~Bool_Matrix();
 	Bool_Matrix& operator =(const Bool_Matrix& x);
 	void Scan(int m, int n);
@@ -22,30 +22,30 @@ public:
 	BoolVector operator[](int i);
 	bool operator ==(Bool_Matrix& x);
 	bool operator !=(Bool_Matrix& x);
-	//изменение одной или нескольких компонент матрицы
+	//РёР·РјРµРЅРµРЅРёРµ РѕРґРЅРѕР№ РёР»Рё РЅРµСЃРєРѕР»СЊРєРёС… РєРѕРјРїРѕРЅРµРЅС‚ РјР°С‚СЂРёС†С‹
 	Bool_Matrix SetUp1(int i ,int j);
 	Bool_Matrix SetUp0(int i, int j);
 	Bool_Matrix Invert(int i, int j);
 
-	Bool_Matrix SetUp1(int i, int j, int kol);// установить в 1 kol элементов в  [i] строке начиная с позиции j
-	Bool_Matrix SetUp0(int i, int j, int kol);// сбросить в 0 kol элементов в  [i] строке начиная с позиции j
-	Bool_Matrix Invert(int i, int j, int kol);// инвертировать kol элементов в  [i] строке начиная с позиции j
+	Bool_Matrix SetUp1(int i, int j, int kol);// СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РІ 1 kol СЌР»РµРјРµРЅС‚РѕРІ РІ  [i] СЃС‚СЂРѕРєРµ РЅР°С‡РёРЅР°СЏ СЃ РїРѕР·РёС†РёРё j
+	Bool_Matrix SetUp0(int i, int j, int kol);// СЃР±СЂРѕСЃРёС‚СЊ РІ 0 kol СЌР»РµРјРµРЅС‚РѕРІ РІ  [i] СЃС‚СЂРѕРєРµ РЅР°С‡РёРЅР°СЏ СЃ РїРѕР·РёС†РёРё j
+	Bool_Matrix Invert(int i, int j, int kol);// РёРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ kol СЌР»РµРјРµРЅС‚РѕРІ РІ  [i] СЃС‚СЂРѕРєРµ РЅР°С‡РёРЅР°СЏ СЃ РїРѕР·РёС†РёРё j
 
-	//операции над булевыми матрицами
-	Bool_Matrix operator &(Bool_Matrix &x);//построчная конъюнкция двух матриц, создается новая матрица
-	Bool_Matrix & operator &=(Bool_Matrix& x);//построчная конъюнкция двух матриц, изменяется *this
-	Bool_Matrix operator |(Bool_Matrix& x);//построчная дизъюнкция двух матриц, создается новая матрица
-	Bool_Matrix& operator |=(Bool_Matrix& x);//построчная дизъюнкция двух матриц, изменяется *this
-	Bool_Matrix operator ^(Bool_Matrix& x);//построчное исключающее "или" двух матриц, создается новая матрица
-	Bool_Matrix& operator ^=(Bool_Matrix& x);//построчное ислключающее "или" двух матриц, изменяется *this
-	Bool_Matrix operator ~();//инверсия всей матрицы
-	Bool_Matrix ShiftRight(int i, int k);//сдвиг вправо элементов i-той строки на k - бит, создается новая матрица
-	Bool_Matrix ShiftRightEq(int i, int k);//сдвиг вправо элементов i-той строки на k - бит, изменяется *this
-	Bool_Matrix ShiftLeft(int i, int k);//сдвиг влево элементов i-той строки на k - бит, создается новая матрица
-	Bool_Matrix ShiftLeftEq(int i, int k);//сдвиг влево элементов i-той строки на k - бит, изменяется *this
-	BoolVector Conj();   	    	//конъюнкция всех строк матрицы
-	BoolVector Disj();         	//дизъюнкция всех строк матрицы
-	BoolVector Xor();		    	//Xor всех строк матрицы
+	//РѕРїРµСЂР°С†РёРё РЅР°Рґ Р±СѓР»РµРІС‹РјРё РјР°С‚СЂРёС†Р°РјРё
+	Bool_Matrix operator &(Bool_Matrix &x);//РїРѕСЃС‚СЂРѕС‡РЅР°СЏ РєРѕРЅСЉСЋРЅРєС†РёСЏ РґРІСѓС… РјР°С‚СЂРёС†, СЃРѕР·РґР°РµС‚СЃСЏ РЅРѕРІР°СЏ РјР°С‚СЂРёС†Р°
+	Bool_Matrix & operator &=(Bool_Matrix& x);//РїРѕСЃС‚СЂРѕС‡РЅР°СЏ РєРѕРЅСЉСЋРЅРєС†РёСЏ РґРІСѓС… РјР°С‚СЂРёС†, РёР·РјРµРЅСЏРµС‚СЃСЏ *this
+	Bool_Matrix operator |(Bool_Matrix& x);//РїРѕСЃС‚СЂРѕС‡РЅР°СЏ РґРёР·СЉСЋРЅРєС†РёСЏ РґРІСѓС… РјР°С‚СЂРёС†, СЃРѕР·РґР°РµС‚СЃСЏ РЅРѕРІР°СЏ РјР°С‚СЂРёС†Р°
+	Bool_Matrix& operator |=(Bool_Matrix& x);//РїРѕСЃС‚СЂРѕС‡РЅР°СЏ РґРёР·СЉСЋРЅРєС†РёСЏ РґРІСѓС… РјР°С‚СЂРёС†, РёР·РјРµРЅСЏРµС‚СЃСЏ *this
+	Bool_Matrix operator ^(Bool_Matrix& x);//РїРѕСЃС‚СЂРѕС‡РЅРѕРµ РёСЃРєР»СЋС‡Р°СЋС‰РµРµ "РёР»Рё" РґРІСѓС… РјР°С‚СЂРёС†, СЃРѕР·РґР°РµС‚СЃСЏ РЅРѕРІР°СЏ РјР°С‚СЂРёС†Р°
+	Bool_Matrix& operator ^=(Bool_Matrix& x);//РїРѕСЃС‚СЂРѕС‡РЅРѕРµ РёСЃР»РєР»СЋС‡Р°СЋС‰РµРµ "РёР»Рё" РґРІСѓС… РјР°С‚СЂРёС†, РёР·РјРµРЅСЏРµС‚СЃСЏ *this
+	Bool_Matrix operator ~();//РёРЅРІРµСЂСЃРёСЏ РІСЃРµР№ РјР°С‚СЂРёС†С‹
+	Bool_Matrix ShiftRight(int i, int k);//СЃРґРІРёРі РІРїСЂР°РІРѕ СЌР»РµРјРµРЅС‚РѕРІ i-С‚РѕР№ СЃС‚СЂРѕРєРё РЅР° k - Р±РёС‚, СЃРѕР·РґР°РµС‚СЃСЏ РЅРѕРІР°СЏ РјР°С‚СЂРёС†Р°
+	Bool_Matrix ShiftRightEq(int i, int k);//СЃРґРІРёРі РІРїСЂР°РІРѕ СЌР»РµРјРµРЅС‚РѕРІ i-С‚РѕР№ СЃС‚СЂРѕРєРё РЅР° k - Р±РёС‚, РёР·РјРµРЅСЏРµС‚СЃСЏ *this
+	Bool_Matrix ShiftLeft(int i, int k);//СЃРґРІРёРі РІР»РµРІРѕ СЌР»РµРјРµРЅС‚РѕРІ i-С‚РѕР№ СЃС‚СЂРѕРєРё РЅР° k - Р±РёС‚, СЃРѕР·РґР°РµС‚СЃСЏ РЅРѕРІР°СЏ РјР°С‚СЂРёС†Р°
+	Bool_Matrix ShiftLeftEq(int i, int k);//СЃРґРІРёРі РІР»РµРІРѕ СЌР»РµРјРµРЅС‚РѕРІ i-С‚РѕР№ СЃС‚СЂРѕРєРё РЅР° k - Р±РёС‚, РёР·РјРµРЅСЏРµС‚СЃСЏ *this
+	BoolVector Conj();   	    	//РєРѕРЅСЉСЋРЅРєС†РёСЏ РІСЃРµС… СЃС‚СЂРѕРє РјР°С‚СЂРёС†С‹
+	BoolVector Disj();         	//РґРёР·СЉСЋРЅРєС†РёСЏ РІСЃРµС… СЃС‚СЂРѕРє РјР°С‚СЂРёС†С‹
+	BoolVector Xor();		    	//Xor РІСЃРµС… СЃС‚СЂРѕРє РјР°С‚СЂРёС†С‹
 	friend std:: ostream& operator << (std::ostream& r, Bool_Matrix& x);
 	friend std::istream& operator >> (std::istream& r, Bool_Matrix& x);
 
