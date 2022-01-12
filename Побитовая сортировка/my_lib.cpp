@@ -35,9 +35,9 @@ void record(int n, int m, int* N)
 {
     for (int i = 0; i < m + 1; i++)
     {
-        unsigned int mask = 1 << (n - 1);//ìàñêà
-        char v[32];//âåêòîð
-        fgets(v, n + 2, stdin);//ââîä âåêòîðà
+        unsigned int mask = 1 << (n - 1);//Ð¼Ð°ÑÐºÐ°
+        char v[32];//Ð²ÐµÐºÑ‚Ð¾Ñ€
+        fgets(v, n + 2, stdin);//Ð²Ð²Ð¾Ð´ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð°
         N[i] = 0;
         for (int j = 0; j < n; j++)
         {
