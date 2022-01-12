@@ -22,7 +22,7 @@ int Bool_Matrix::Max(char** s, int m)
 		if (max < temp)max = temp;
 	}
 	return max;
-}//âñïîìîãàòåëüíàÿ ôóíêöèÿ íåîáõîäèìà â êîíñòðóêòîðå
+}//Ð²ÑÐ¿Ð¾Ð¼Ð¾Ð³Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð° Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ðµ
 Bool_Matrix::Bool_Matrix() 
 {
 	m = 1; n = 1;
@@ -314,3 +314,4 @@ std::istream& operator >> (std::istream& r, Bool_Matrix& x)
 	x.Scan(M, N);
 	return r;
 }
+
